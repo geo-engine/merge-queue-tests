@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  push:
+    branches: main
+  pull_request:
+    branches: main
+  merge_group:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Poor man's CI
+        run: exit $(cat file.dat)
+
